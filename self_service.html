@@ -1,0 +1,85 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Self Service</title>
+    <link rel="stylesheet" href="css/prenatal_care.css">
+
+    <script src="self_service.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+    <link  href="/path/to/jquery.fancybox.min.css" rel="stylesheet">
+    <script src="/path/to/jquery.fancybox.min.js"></script>
+</head>
+
+<body>
+    <div class="header">
+        <h1>Self Service</h1>
+    </div>
+
+    <form id="form" action="/analyse.php">
+        <h2>Personal Information</h2>
+        <label for="first_name">First Name</label>
+        <input type="text" id="first_name" name="first_name" placeholder="Jane">
+        <br>
+        <label for="last_name">Last Name</label>
+        <input type="text" id="last_name" name="last_name" placeholder="Doe">
+        <br>
+        <label for="age">Age (years)</label>
+        <input type="number" id="age" name="age" min="0" step="1" placeholder="25">
+        <br>
+
+        <h2>Pregnancy Related Question</h2>
+        <label for="multiple_pregnancy">Is this a multiple pregnancy?</label>
+        <select id="multiple_pregnancy" name="multiple_pregnancy" onChange="show_hide_baby_no_question()">
+            <option value="No">No</option>
+            <option value="Yes">Yes</option>
+            <option value="Idk">I don't know</option>
+        </select>
+        <br>
+        <div id=baby_no_question style="display:none">
+            <label for="baby_no">How many babies are you carrying?</label>
+            <input type="number" id="baby_no" name="baby_no" min="2" step="1" placeholder="2">
+            <br>
+        </div>
+        <label for="pregnancy_duration">How far along are you? (weeks)</label>
+        <input type="number" id="pregnancy_duration" name="pregnancy_duration" min="0" step="1" placeholder="4">
+        <br>
+        <label for="miscarriage">Have you experienced any miscarriage(s) or stillbirth(s)?</label>
+        <select id="miscarriage" name="miscarriage" onChange="show_hide_miscarriage_no_question()">
+            <option value="No">No</option>
+            <option value="Yes">Yes</option>
+        </select>
+        <br>
+        <div id="miscarriage_no_question" style="display:none">
+            <label for="miscarriage_no">How many miscarriage(s) and/or stillbirth(s) have you experienced?</label>
+            <input type="number" id="miscarriage_no" name="miscarriage_no" min="1" step="1" placeholder="1">
+            <br>
+        </div>
+
+        <h2>Health Measurements</h2>
+        <label for="height">Height (cm)</label>
+        <input type="number" id="height" name="height" min="0" step="0.01" placeholder="165">
+        <br>
+        <label for="weight">Weight (kg)</label>
+        <input type="number" id="weight" name="weight" min="0" step="0.1" placeholder="52">
+        <br>
+        <label for="blood_pressure">Blood Pressure (mmHg)</label>
+        <input type="text" id="blood_pressure" name="blood_pressure" pattern="\d{2,3}[/]{1}\d{2,3}" placeholder="130/80">
+        <a href="blood_pressure_help.html">help</a>
+        <br>
+        <label for="blood_sugar">Blood Sugar Level (mmol/L)</label>
+        <input type="number" id="blood_sugar" name="blood_sugar" min="0" step="0.1" placeholder="5.0">
+        <span id=help>help</span>
+        <br>
+        <label for="haemoglobin_level">Haemoglobin Level (g/L)</label>
+        <input type="number" id="haemoglobin_level" name="haemoglobin_level" min="0" step="0.1" placeholder="120.0">
+        <span id=help>help</span>
+        <br>
+
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+
+</body>
+</html>
