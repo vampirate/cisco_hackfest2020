@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Emergency</title>
+</head>
+<body>
+
+<h1>Emergency</h1>
+
+<p>
+  You have activated the emergency function because you require immediate assistance. An ambulance will automatically be called to your location in <span id="countdowntimer"> 15 </span> seconds
+</p>
+
+<form>
+  <input type = "button" value="Cancel & return to previous page" onclick ="history.back()" />
+  <input type = "button" value="Confirm & call ambulance immediately" onclick = "window.location.href = 'ambulance_called.html'" />
+</form>
+
+<script type="text/javascript">
+    var timeleft = 15;
+    var Timer = setInterval(function(){
+      timeleft--;
+      document.getElementById("countdowntimer").textContent = timeleft;
+      if(timeleft <= 0)
+          clearInterval(Timer)
+    },1000);
+    setTimeout(function(){ window.location.href = 'ambulance_called.html'; }, 16000);
+</script>
+
+
+</body>
+</html>
