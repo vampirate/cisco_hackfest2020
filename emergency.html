@@ -2,22 +2,24 @@
 <html>
 <head>
   <title>Emergency</title>
+  <link rel="stylesheet" href="css/emergency.css">
 </head>
 <body>
 
 <h1>Emergency</h1>
 
 <p>
-  You have activated the emergency function because you require immediate assistance. An ambulance will automatically be called to your location in <span id="countdowntimer"> 15 </span> seconds
+  You have activated the emergency function because you require immediate assistance. An ambulance will automatically be called to your location in <span id="countdowntimer"> 30 </span> seconds
 </p>
 
 <form>
-  <input type = "button" value="Cancel & return to previous page" onclick ="history.back()" />
-  <input type = "button" value="Confirm & call ambulance immediately" onclick = "window.location.href = 'ambulance_called.html'" />
+  <input type = "button" value="Cancel & return to previous page" onclick ="history.back()" id="cancel"/>
+  <input type = "button" value="Confirm & call ambulance immediately" onclick = "window.location.href = 'ambulance_called.html'" id="confirm" />
 </form>
 
+
 <script type="text/javascript">
-    var timeleft = 15;
+    var timeleft = 30;
     var Timer = setInterval(function(){
       timeleft--;
       document.getElementById("countdowntimer").textContent = timeleft;
