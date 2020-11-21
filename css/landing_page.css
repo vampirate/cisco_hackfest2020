@@ -1,14 +1,42 @@
 body {
-  margin-top: 10em;
+  margin-top: 5em;
   background-color: #bad2ed;
   font-family: Arial, Helvetica, sans-serif;
   width: 100%;
+  text-align:center;
+  line-height: 1.4;
 }
 
 h1{
-  align-items
+    text-align:center;
+    margin: auto;
+    width: 70%;
+    padding: 25px;
+    border-radius: 15px;
+    background-color: #001973;
+    color: white;
+}
+
+p{
+  padding-top: 5em;
+  text-align:center;
+  font-size: 30px;
+  margin: auto;
+  width: 70%
 }
 
 button{
+  margin-top: 5em;
   background-color:red;
+  text-align:center;
+  background-color:red;
+  width: 300px;
+  padding: 15px 32px;
+  border-radius: 12px;
+  color: white;
+
+
+}
+a{
+  text-decoration: none;
 }
