@@ -15,23 +15,3 @@ function show_hide_miscarriage_no_question(){
         document.getElementById('miscarriage_no_question').style.display = "none";
     }
 }
-
-function measurement_guide(guide_slides){
-    var slideIndex = 1;
-    showDivs(slideIndex);
-
-    function plusDivs(n) {
-        showDivs(sildeIndex += n);
-    }
-
-    function showDivs(n) {
-        var i;
-        var x = document.getElementsByClassName(guide_slides)
-        if (n > x.length) { slideIndex = 1 }
-        if (n < 1) { slideIndex = x.length };
-        for (i = 0; i < x.length; i++) {
-            x[i].style.display = "none";
-        }
-        x[slideIndex - 1].style.display = "block";
-    }
-}

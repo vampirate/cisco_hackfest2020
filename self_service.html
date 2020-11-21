@@ -2,17 +2,15 @@
 <html>
 <head>
     <title>Self Service</title>
-    <link rel="stylesheet" href="css/prenatal_care.css">
-
     <script src="self_service.js"></script>
-
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-
-    <link  href="/path/to/jquery.fancybox.min.css" rel="stylesheet">
-    <script src="/path/to/jquery.fancybox.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+    <link rel="stylesheet" href="css/prenatal_care.css">
 </head>
 
 <body>
+    
     <div class="header">
         <h1>Self Service</h1>
     </div>
@@ -37,7 +35,7 @@
             <option value="Idk">I don't know</option>
         </select>
         <br>
-        <div id=baby_no_question style="display:none">
+        <div id="baby_no_question" style="display:none">
             <label for="baby_no">How many babies are you carrying?</label>
             <input type="number" id="baby_no" name="baby_no" min="2" step="1" placeholder="2">
             <br>
@@ -66,15 +64,19 @@
         <br>
         <label for="blood_pressure">Blood Pressure (mmHg)</label>
         <input type="text" id="blood_pressure" name="blood_pressure" pattern="\d{2,3}[/]{1}\d{2,3}" placeholder="130/80">
-        <a href="blood_pressure_help.html">help</a>
+        <a data-fancybox="images" data-options='{"baseClass" : "fancybox-custom"}' href="images/Bloodpressure1.png">help</a>
+        <a href="images/Bloodpressure2.png" data-fancybox="images" data-options='{"baseClass" : "fancybox-custom"}'></a>
+        <a href="images/Bloodpressure3.png" data-fancybox="images" data-options='{"baseClass" : "fancybox-custom"}'></a>
+        <a href="images/Bloodpressure4.png" data-fancybox="images" data-options='{"baseClass" : "fancybox-custom"}'></a>
+        <a href="images/Bloodpressure5.png" data-fancybox="images" data-options='{"baseClass" : "fancybox-custom"}'></a>
         <br>
         <label for="blood_sugar">Blood Sugar Level (mmol/L)</label>
         <input type="number" id="blood_sugar" name="blood_sugar" min="0" step="0.1" placeholder="5.0">
-        <span id=help>help</span>
+        <span id="help">help</span>
         <br>
         <label for="haemoglobin_level">Haemoglobin Level (g/L)</label>
         <input type="number" id="haemoglobin_level" name="haemoglobin_level" min="0" step="0.1" placeholder="120.0">
-        <span id=help>help</span>
+        <span id="help">help</span>
         <br>
 
         <br>
