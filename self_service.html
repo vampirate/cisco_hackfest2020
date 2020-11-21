@@ -15,21 +15,21 @@
         <h1>Self Service</h1>
     </div>
 
-    <form id="form" action="/analyse.php">
+    <form id="form" action="prognosis.php" method="POST">
         <h2>Personal Information</h2>
         <label for="first_name">First Name</label>
-        <input type="text" id="first_name" name="first_name" placeholder="Jane">
+        <input type="text" id="first_name" name="first_name" placeholder="Jane" required>
         <br>
         <label for="last_name">Last Name</label>
-        <input type="text" id="last_name" name="last_name" placeholder="Doe">
+        <input type="text" id="last_name" name="last_name" placeholder="Doe" required>
         <br>
         <label for="age">Age (years)</label>
-        <input type="number" id="age" name="age" min="0" step="1" placeholder="25">
+        <input type="number" id="age" name="age" min="0" step="1" placeholder="25" required>
         <br>
 
         <h2>Pregnancy Related Question</h2>
         <label for="multiple_pregnancy">Is this a multiple pregnancy?</label>
-        <select id="multiple_pregnancy" name="multiple_pregnancy" onChange="show_hide_baby_no_question()">
+        <select id="multiple_pregnancy" name="multiple_pregnancy" onChange="show_hide_baby_no_question()" required>
             <option value="No">No</option>
             <option value="Yes">Yes</option>
             <option value="Idk">I don't know</option>
@@ -41,10 +41,10 @@
             <br>
         </div>
         <label for="pregnancy_duration">How far along are you? (weeks)</label>
-        <input type="number" id="pregnancy_duration" name="pregnancy_duration" min="0" step="1" placeholder="4">
+        <input type="number" id="pregnancy_duration" name="pregnancy_duration" min="0" step="1" placeholder="4" required>
         <br>
         <label for="miscarriage">Have you experienced any miscarriage(s) or stillbirth(s)?</label>
-        <select id="miscarriage" name="miscarriage" onChange="show_hide_miscarriage_no_question()">
+        <select id="miscarriage" name="miscarriage" onChange="show_hide_miscarriage_no_question()" required>
             <option value="No">No</option>
             <option value="Yes">Yes</option>
         </select>
@@ -55,15 +55,39 @@
             <br>
         </div>
 
+        <h2>Other Health Related Question</h2>
+        <label for="tobacco_use">Do you smoke?</label>
+        <select id="tobacco_use" name="tobacco_use" onChange="show_hide_tobacco_no_question()" required>
+            <option value="No">No</option>
+            <option value="Yes">Yes</option>
+        </select>
+        <br>
+        <div id="tobacco_no_question" style="display:none">
+            <label for="tobacco_no">How many packs do you smoke per week?</label>
+            <input type="tobacco_no" id="tobacco_no" name="tobacco_no" min="0.5" step="0.1" placeholder="0.5">
+            <br>
+        </div>
+
+        <label for="alcohol_use">Do you drink alcohol?</label>
+        <select id="alcohol_use" name="alcohol_use" onChange="show_hide_alcohol_no_question()" required>
+            <option value="No">No</option>
+            <option value="Yes">Yes</option>
+        </select>
+        <div id="alcohol_no_question" style="display:none">
+            <label for="alcohol_no">How many standard drinks do you have per week?</label>
+            <input type="alcohol_no" id="alcohol_no" name="alcohol_no" min="0" step="1" placeholder="1">
+            <br>
+        </div>
+
         <h2>Health Measurements</h2>
         <label for="height">Height (cm)</label>
-        <input type="number" id="height" name="height" min="0" step="0.01" placeholder="165">
+        <input type="number" id="height" name="height" min="0" step="0.01" placeholder="165" required>
         <br>
         <label for="weight">Weight (kg)</label>
-        <input type="number" id="weight" name="weight" min="0" step="0.1" placeholder="52">
+        <input type="number" id="weight" name="weight" min="0" step="0.1" placeholder="52" required>
         <br>
         <label for="blood_pressure">Blood Pressure (mmHg)</label>
-        <input type="text" id="blood_pressure" name="blood_pressure" pattern="\d{2,3}[/]{1}\d{2,3}" placeholder="130/80">
+        <input type="text" id="blood_pressure" name="blood_pressure" pattern="\d{2,3}[/]{1}\d{2,3}" placeholder="130/80" required>
         <a data-fancybox="images" data-options='{"baseClass" : "fancybox-custom"}' href="images/Bloodpressure1.png">help</a>
         <a href="images/Bloodpressure2.png" data-fancybox="images" data-options='{"baseClass" : "fancybox-custom"}'></a>
         <a href="images/Bloodpressure3.png" data-fancybox="images" data-options='{"baseClass" : "fancybox-custom"}'></a>
@@ -71,11 +95,11 @@
         <a href="images/Bloodpressure5.png" data-fancybox="images" data-options='{"baseClass" : "fancybox-custom"}'></a>
         <br>
         <label for="blood_sugar">Blood Sugar Level (mmol/L)</label>
-        <input type="number" id="blood_sugar" name="blood_sugar" min="0" step="0.1" placeholder="5.0">
+        <input type="number" id="blood_sugar" name="blood_sugar" min="0" step="0.1" placeholder="5.0" required>
         <span id="help">help</span>
         <br>
         <label for="haemoglobin_level">Haemoglobin Level (g/L)</label>
-        <input type="number" id="haemoglobin_level" name="haemoglobin_level" min="0" step="0.1" placeholder="120.0">
+        <input type="number" id="haemoglobin_level" name="haemoglobin_level" min="0" step="0.1" placeholder="120.0" required>
         <span id="help">help</span>
         <br>
 
