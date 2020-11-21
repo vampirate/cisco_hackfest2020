@@ -1,7 +1,7 @@
 
 
 body {
-  margin-top: 10em;
+  margin-top: 5em;
   background-color: #bad2ed;
   font-family: Arial, Helvetica, sans-serif;
   width: 100%;
@@ -22,7 +22,18 @@ p{
     font-size: 30px;
     margin: auto;
     width: 70%
+}
 
+#AdditionalInfo{
+  padding-top:50px;
+  font-size:20px;
+}
+
+ul{
+  color: red;
+  list-style-type: none;
+  text-align:center;
+  list-style-position: outside;
 }
 
 
