@@ -7,16 +7,17 @@
 <body>
 
 <h1>Emergency</h1>
-
+<br />
+<br />
 <p>
   You have activated the emergency function because you require immediate assistance. An ambulance will automatically be called to your location in <span id="countdowntimer"> 30 </span> seconds
 </p>
-
+<br />
+<br />
 <form>
   <input type = "button" value="Cancel & return to previous page" onclick ="history.back()" id="cancel"/>
   <input type = "button" value="Confirm & call ambulance immediately" onclick = "window.location.href = 'ambulance_called.html'" id="confirm" />
 </form>
-
 
 <script type="text/javascript">
     var timeleft = 30;

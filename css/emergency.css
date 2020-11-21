@@ -1,5 +1,6 @@
 
-body{
+
+body {
   margin-top: 10em;
   background-color: #bad2ed;
   font-family: Arial, Helvetica, sans-serif;
@@ -8,35 +9,39 @@ body{
 
 h1{
     text-align:center;
-    margin-left: 1em;
-    margin-right: 1em;
+    margin: auto;
+    width: 70%;
     padding: 25px;
-    border-radius: 20px;
+    border-radius: 15px;
     background-color: #001973;
     color: white;
-    text-align: center;
+
 }
 p{
     text-align:center;
     font-size: 30px;
+    margin: auto;
+    width: 70%
 
 }
 
 
 #cancel{
   text-align:center;
-  margin-left: 1em;
-  margin-right: 1em;
+  position: absolute;
+  right: 51%;
   background-color:red;
+  width: 300px;
   padding: 15px 32px;
   border-radius: 12px;
   color: white;
 }
 #confirm{
   text-align:center;
-  margin-left: 1em;
-  margin-right: 1em;
-  background-color:red;
+  position: absolute;
+  left:51%;
+  background-color:green;
+  width: 300px;
   padding: 15px 32px;
   border-radius: 12px;
   color: white;
