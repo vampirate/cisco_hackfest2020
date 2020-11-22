@@ -100,7 +100,7 @@ p {
   margin-top: 25px;
   background-color:red;
   text-align:center;
-  width: 15%;
+  width: 10em;
   padding: 15px 32px;
   border-radius: 15px;
   color: white;
@@ -254,4 +254,8 @@ input[type=submit]:active {
 .risk_reason {
   font-size: 20px;
   color: black;
+}
+
+.logos{
+  padding-top: 50px;
 }
