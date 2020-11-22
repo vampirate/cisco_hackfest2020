@@ -157,6 +157,10 @@ button:active {
   list-style-position: outside;
 }
 
+.help_link, a{
+  color: black;
+}
+
 .fancybox-custom .fancybox-bg {
   background: #fcd4c9;
   opacity: 1.0;
