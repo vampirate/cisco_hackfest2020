@@ -35,14 +35,14 @@
 </div>
 
 <script type="text/javascript">
-    var timeleft = 45;
+    var timeleft = 90;
     var Timer = setInterval(function(){
       timeleft--;
       document.getElementById("countdowntimer").textContent = timeleft;
       if(timeleft <= 0)
           clearInterval(Timer)
     },1000);
-    setTimeout(function(){ window.location.href = 'ambulance_called.html'; }, 45000);
+    setTimeout(function(){ window.location.href = 'ambulance_called.html'; }, 90000);
 </script>
 
 

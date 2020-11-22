@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+<style>
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: auto;
+  margin-right: auto;
+  text-align:center;
+}
+
+.column{
+	position: relative;
+	text-align: center;
+}
+
+.image {
+  display: block;
+  width: 80%;
+  opacity: 0.8;
+}
+
+
+.text-overlay{	
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);;
+  margin-right: 50px
+  color: black;
+  font-size: 40px;
+}
+</style>
+</head>
+<body>
+
+<h1>General Information</h1>
+<p>Discover information to help you on your pregnancy journey</p>
+<div class="row">
+	<div class="column">
+		<a href = "https://www.mayoclinic.org/healthy-lifestyle/getting-pregnant/in-depth/symptoms-of-pregnancy/art-20043853">
+			<img src="images/symptoms.png" alt="Symptoms" class="image">
+			<div class="text-overlay">Common Symptoms & Remedies</div>
+		</a>
+	</div>
+
+	<div class="column">
+	  <img src="images/Exercise.png" alt="Exercise" class="image">
+	  <div class="text-overlay">Exercising & Dieting</div>
+	</div>
+
+	<div class="column">
+	  <img src="images/YoungMother.png" alt="YoungMothers" class="image">
+	  <div class="text-overlay">Young Mothers</div>
+	</div>
+</div>
+
+</body>
+</html>
