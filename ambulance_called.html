@@ -1,9 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Ambulance_called</title>
-  <link rel="stylesheet" href="css/emergency.css" >
+  <title>Ambulance Called</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="icon" type="image/png" href="images/UN_Badge.png"/>
+
+  <script>
+    window.addEventListener("beforeunload", function () {
+      document.body.classList.add("animate-out");
+    });
+  </script>
 </head>
-<body>
-  <h1> An ambulance has now been called to your location</h1>
+<body class="animate-in">
+  <header>
+    <h1>An ambulance has now been called to your location.</h1>
+  </header>
 </body>
+</html>

@@ -1,47 +1,55 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Consultation</title>
-    <link rel="stylesheet" href="css/prenatal_care.css">
+    <title>Mums Matter: Consultation</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="icon" type="image/png" href="images/UN_Badge.png" />
+    <script>
+        window.addEventListener("beforeunload", function () {
+          document.body.classList.add("animate-out");
+        });
+    </script>
 </head>
+<body class="animate-in">
 
-    <div class="header">
+    <header>
         <h1>Consultation</h1>
+    </header>
+
+    <div class="content_selections">
+        <div class="containers">
+            <a href="landing_page.html">
+                <img src="images/House_1.svg"  alt="Home Icon" width="150", height="150">
+                <p><br>Home</p>
+            </a>
+        </div>
+
+        <div class="containers">
+            <a href="prenatal_care.html">
+                <img src="images/Undue_Back_Icon.svg"  alt="Back Icon" width="150", height="150">
+                <p><br>Back</p>
+            </a>
+        </div>
+
+        <div class="containers">
+            <a href="https://nttlimitedau.webex.com/meet/edbert.chung">
+                <img src="images/Stethoscope.svg"  alt="Back Icon" width="150", height="150">
+                <p>Talk to a<br>Doctor Now!</p>
+            </a>
+        </div>
+
+        <div class="containers">
+            <a href="schedule_meeting.html">
+                <img src="images/Calendar.svg"  alt="Back Icon" width="150", height="150">
+                <p>Schedule a <br>Meeting</p>
+            </a>
+        </div>
     </div>
-
-    <table>
-        <tr class="options">
-            <td>
-                <a href="landing_page.html">
-                    <img src="images/House_1.svg"  alt="Home Icon" width="150", height="150">
-                    <h2>Home</h2>
-                </a>
-            </td>
-
-            <td>
-                <a href="prenatal_care.html">
-                    <img src="images/Undue_Back_Icon.svg"  alt="Back Icon" width="150", height="150">
-                    <h2>Back</h2>
-                </a>
-            </td>
-
-            <td>
-                <a href="https://nttlimitedau.webex.com/meet/edbert.chung">
-                    <img src="images/Stethoscope.svg"  alt="Back Icon" width="150", height="150">
-                    <h2>Talk to an Online <br>Health Professional Now!</h2>
-                </a>
-            </td>
-
-            <td>
-                <a href="schedule_meeting.html">
-                    <img src="images/Calendar.svg"  alt="Back Icon" width="150", height="150">
-                    <h2>Schedule a Meeting</h2>
-                </a>
-            </td>
-        </tr>
-    </table>
 
     <div class="emergency">
-        <a href="emergency.html"><p>Emergency</p></a>
+        <a class="emergency" href="emergency.html">
+        <button>Emergency</button>
+        </a>
     </div>
+</body>
 </html>

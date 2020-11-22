@@ -2,37 +2,37 @@
 <html>
 <head>
   <title>Emergency</title>
-  <link rel="stylesheet" href="css/emergency.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="icon" type="image/png" href="images/UN_Badge.png" />
+  <script>
+    window.addEventListener("beforeunload", function () {
+      document.body.classList.add("animate-out");
+    });
+  </script>
 </head>
-<body>
+<body class="animate-in">
+  <header>
+    <h1>Emergency</h1>
+  </header>
 
-<h1>Emergency</h1>
-<br />
-<br />
-<p id="MainMessage">
-  You have activated the emergency function because you require immediate assistance. An ambulance will automatically be called to your location in <span id="countdowntimer"> 45 </span> seconds
-  <br />
-  <br />
-  <b>Ambulances are needed for life-threatening emergencies, and normal labour may not always be an emergency. Please consider this before proceeding</b>
-</p>
-<br />
-<form>
-  <input type = "button" value="Cancel & return to previous page" onclick ="history.back()" id="cancel"/>
-  <input type = "button" value="Confirm & call ambulance immediately" onclick = "window.location.href = 'ambulance_called.html'" id="confirm" />
-</form>
-<br />
-<p id="AdditionalInfo">
-  Below are the rare occasions an ambulance may be needed, such as:
+  <h2>You have activated the emergency function because you require immediate assistance. <br>An ambulance will automatically be called to your location in <span id="countdowntimer"> 45 </span> seconds.</h2>
+  <h2>Ambulances are needed for life-threatening emergencies, and normal labour may not always be an emergency.<br>Please consider this before proceeding.</h2>
+
+  <button onclick="history.back()" class="cancel">Cancel & return to previous page</button>
+  <button onclick="window.location.href='ambulance_called.html'" class="confirm">Confirm & call ambulance immediately</button>
+
+<div class="additional_info">
+  <p>Below are the rare occasions an ambulance may be needed, such as:
   <ul>
     <li>You are immediately about to give birth with a strong urge to push.</li>
     <li>Fresh bleeding which is more than an egg cupful (or two changes of pads).</li>
     <li>Severe abdominal pain that continues and persists after a contraction.</li>
-    <li>The baby’s cord is noticeable.</li>
+    <li>The baby's cord is noticeable.</li>
     <li>Other medical emergencies, such as breathing difficulties or chest pain.</li>
     <li>There is no one in the immediate vicinity to help and you do not have an alternative mode of transport to the hospital/birthing site</li>
   </ul>
-</p>
-
+  </p>
+</div>
 
 <script type="text/javascript">
     var timeleft = 45;

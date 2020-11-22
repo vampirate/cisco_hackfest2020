@@ -2,32 +2,39 @@
 <html>
   <head>
     <title>Mums Matter: Home</title>
-    <link href="./css/landing_page.css" rel="stylesheet" />
-    <link rel="icon" type="image/png" href="images/UN_Badge.png"/ />
-
+    <link href="css/main.css" rel="stylesheet" />
+    <link rel="icon" type="image/png" href="images/UN_Badge.png" />
+    <script>
+      window.addEventListener("beforeunload", function () {
+        document.body.classList.add("animate-out");
+      });
+    </script>
   </head>
-  <body>
-    <h1> Mums Matter</h1>
+  <body class="animate-in">
+    <header>
+      <h1>Mums Matter</h1>
+    </header>
 
-    <p>
-      Welcome to the self service pregnancy clinic. To get started please select from the below options:
-    </p>
-    <a href="prenatal_care.html">
-      <img src="images/Prenatal.png" alt="Prenatal Care" height="250" />
-    </a>
-
-    <a href="postnatal_care.html">
-      <img src="images/Postnatal.png" alt="Postnatal Care" height="250" />
-    </a>
-
-    <br />
-    <br />
-
-<a href="emergency.html">
-  <button>Emergency</button>
-</a>
-
-
-
+    <h2>Welcome to the self service pregnancy clinic. To get started please select from the below options</h2>
+    
+    <div class="selections">
+      <div class="containers">
+        <a href="prenatal_care.html">
+          <img src="images/Prenatal.png" alt="Prenatal Care" height="250" />
+          <p>Prenatal Care</p>
+        </a>
+      </div>
+      <div class="containers">
+        <a href="postnatal_care.html">
+          <img src="images/Postnatal.png" alt="Postnatal Care" height="250" />
+          <p>Postnatal Care</p>
+        </a>
+      </div>
+    </div>
+    <div class="emergency">
+        <a class="emergency" href="emergency.html">
+        <button>Emergency</button>
+        </a>
+    </div>
   </body>
 </html>

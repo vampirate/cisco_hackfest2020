@@ -2,13 +2,20 @@
 <html>
 <head>
     <title>Your Prognosis</title>
-    <link rel="stylesheet" href="css/prenatal_care.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="icon" type="image/png" href="images/UN_Badge.png"/>
     <script src="self_service.js"></script>
+    <script>
+        window.addEventListener("beforeunload", function () {
+        document.body.classList.add("animate-out");
+        });
+    </script>
 </head>
-<body>
-    <div class="header">
+<body class="animate-in">
+    <header>
         <h1>Your Prognosis</h1>
-    </div>
+    </header>
+
     <?php
     $first_name = $_POST['first_name'];
     $last_name = $_POST['last_name'];
@@ -121,39 +128,62 @@
 
     if ($risk > 0) {
         $risk_profile = "HIGH";
+        $color = "#ef4023";
     } else {
         $risk_profile = "LOW";
+        $color = "#1dbd45";
     }
     ?>
 
     <?php echo "<h2>Thanks " . $first_name . " " . $last_name ." for using the Self Service page</h2>"?>
-    <h3>Here is your preliminary prognosis results</h3>
 
-    <?php echo "<h3>Your pregnancy's current risk profile is " . $risk_profile ."</h3><h3>The reason is because:</h3>";
+    <?php echo "<h3>Your pregnancy's current risk profile is </h3>"; ?>
+    <?php echo "<div class=\"risk_report\" style=\"color: $color\">$risk_profile</h4>"; ?>
+
+    <?php
+
+        if ($risk>0) {
+            echo "<h3>The reason is because:</h3>";
+        }
         if ($age_risk) {
-            echo "<li>You are older than 35 years old which are more prone to complications during pregnancy.</li>";
+            echo "<li class=\"risk_reason\">You are older than 35 years old which are more prone to complications during pregnancy.</li>";
         }
         if ($miscarriage_risk) {
-            echo "<li>You have experienced multiple miscarriages/stillbirths. This means you have a higher chance of miscarrying again.</li>";
+            echo "<li class=\"risk_reason\">You have experienced multiple miscarriages/stillbirths. This means you have a higher chance of miscarrying again.</li>";
         }
         if ($weight_risk) {
             if ($weight_risk_detail == "over") {
-                echo "<li>Your weight gain is higher than the normal range.</li>";
+                echo "<li class=\"risk_reason\">Your weight gain is higher than the normal range.</li>";
             } else {
-                echo "<li>Your weight gain is lower than the normal range.</li>";
+                echo "<li class=\"risk_reason\">Your weight gain is lower than the normal range.</li>";
             }
         }
         if ($bp_risk) {
-            echo "<li>Your blood pressure is higher than what is considered normal.</li>";
+            echo "<li class=\"risk_reason\">Your blood pressure is higher than what is considered normal.</li>";
         }
         if ($hb_risk) {
-            echo "<li>Your haemoblogin level indicates that you are anemic.</li>";
+            echo "<li class=\"risk_reason\">Your haemoblogin level indicates that you are anemic.</li>";
         }
         if ($bs_risk) {
-            echo "<li>Your blood sugar level is higher than what is considered normal during a pregnancy.</li>";
+            echo "<li class=\"risk_reason\">Your blood sugar level is higher than what is considered normal during a pregnancy.</li>";
         }
-
     ?>
+
+    <div class="content_selections">
+        <div class="containers">
+            <a href="landing_page.html">
+                <img src="images/House_1.svg"  alt="Back Icon" width="100", height="100">
+                <p>Home</p>
+            </a>
+        </div>
+
+        <div class="containers">
+            <a href="consultation.html">
+                <img src="images/Headset.svg"  alt="Home Icon" width="100", height="100">
+                <p>Consultation</p>
+            </a>
+        </div>
+    </div>
 
 </body>
 </html>

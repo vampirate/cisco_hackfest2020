@@ -1,20 +1,35 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Postnatal Care</title>
-    <link rel="stylesheet" href="css/prenatal_care.css">
+    <title>Mums Matter: Postnatal Care</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="icon" type="image/png" href="images/UN_Badge.png" />
+
+    <script>
+        window.addEventListener("beforeunload", function () {
+          document.body.classList.add("animate-out");
+        });
+    </script>
 </head>
 
-<body>
-    <div class="header">
+<body class="animate-in">
+    <header>
         <h1>Postnatal Care</h1>
-    </div>
+    </header>
+
     <h2>Postnatal Care Feature Coming Soon!</h2>
 
-    <a href="landing_page.html">
-        <img src="images/Undue_Back_Icon.svg"  alt="Back Icon" width="150", height="150">
-        <h2>Back</h2>
-    </a>
+    <div class="selections">
+        <div class="containers">
+            <a href="landing_page.html">
+                <img src="images/Undue_Back_Icon.svg"  alt="Back Icon" width="150", height="150">
+                <p>Back</p>
+            </a>
+    </div>
+    <div class="emergency">
+        <a class="emergency" href="emergency.html">
+        <button>Emergency</button>
+        </a>
+    </div>
 </body>
-
 </html>

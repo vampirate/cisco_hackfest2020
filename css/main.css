@@ -1,0 +1,253 @@
+header {
+  background-color: #001973;
+  margin: 0;
+}
+
+h1 {
+  text-align:center;
+  margin: auto;
+  width: 70%;
+  padding: 25px;
+  background-color: #001973;
+  color: white;
+}
+
+h2 {
+  padding: 20px;
+  color: #001973;
+}
+
+h3 {
+  font-size: 22px;
+  color: black
+}
+
+body {
+  margin-left: 0;
+  margin-top: 5em;
+  background-color: #bad2ed;
+  font-family: Arial, Helvetica, sans-serif;
+  width: 100%;
+  text-align: center;
+  line-height: 1.4;
+}
+
+.animate-in {
+  -webkit-animation: fadeIn .5s ease-in;
+  animation: fadeIn .5s ease-in;
+}
+
+.animate-out {
+  -webkit-transition: opacity .5s;
+  transition: opacity .5s;
+  opacity: 0;
+}
+
+@-webkit-keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.selections {
+  margin: auto;
+  padding-top: 20px;
+}
+
+.content_selections {
+  margin: auto;
+  padding-top: 80px;
+}
+
+.containers {
+  display: inline-block;
+  padding-left: 50px;
+  padding-right: 50px;
+  color: #001973;
+  text-decoration: none;
+}
+
+.containers a:link, a:visited {
+  text-decoration: none;
+  color: #001973;
+}
+
+.containers a:hover {
+  text-decoration: underline;
+  color: #008770;
+  font-weight: bold;
+}
+
+.containers a:active {
+  font-style: italic;
+}
+
+p {
+  text-align: center;
+  font-size: 22px;
+  margin: auto;
+}
+
+.emergency {
+  margin-top: 30px;
+}
+
+.emergency button {
+  margin-top: 25px;
+  background-color:red;
+  text-align:center;
+  width: 15%;
+  padding: 15px 32px;
+  border-radius: 15px;
+  color: white;
+  font-size: 22px;
+  border: none;
+}
+
+button:hover {
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 2px 2px 0 grey;
+  transition: box-shadow 0.2s, font-weight 0.2s;
+}
+
+button:focus {
+  outline: 0;
+}
+
+button:active {
+  font-style: italic;
+  box-shadow: none;
+}
+
+.cancel, button {
+  margin-top: 0px;
+  margin-right: 20px;
+  background-color: red;
+  text-align: center;
+  width: 15%;
+  padding: 15px 32px;
+  border-radius: 15px;
+  color: white;
+  font-size: 18px;
+  border: none;
+}
+
+.confirm, button {
+  background-color: green;
+  margin-left: 20px;
+}
+
+.additional_info p{
+  margin-top: 50px;
+  font-size:20px;
+}
+
+.additional_info ul{
+  margin-left: auto;
+  margin-right: auto;
+  display: inline-block;
+  color: red;
+  list-style-type: none;
+  text-align: center;
+  list-style-position: outside;
+}
+
+.fancybox-custom .fancybox-bg {
+  background: #fcd4c9;
+  opacity: 1.0;
+}
+
+.accordion {
+  background:#008770;
+  width: 80%;
+  color:white;
+  cursor: pointer;
+  padding: 18px;
+  width: 80%;
+  border: none;
+  outline: none;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 20px;
+  transition: 0.4s;
+}
+
+.accordion:hover {
+  color:#008770;
+  background:white;
+}
+
+.panel {
+  margin: auto;
+  width: 80%;
+  color:black;
+  background-color: #c7e8e6;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+
+.sections {
+  margin-top: 30px;
+}
+
+label {
+  padding-top: 20px;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 2em;
+}
+
+input[type=text], input[type=number], select, ::placeholder{
+  padding-top: 5px;
+  padding-bottom: 5px;
+  width: 300px;
+  text-align: center;
+  text-align-last: center;
+  -ms-text-align-last: center;
+  -moz-text-align-last: center;
+}
+
+input[type=submit] {
+  margin-top: 25px;
+  background-color: #001973;
+  text-align:center;
+  width: 15%;
+  padding: 10px 30px;
+  border-radius: 15px;
+  color: white;
+  font-size: 20px;
+  border: none;
+}
+
+input[type=submit]:hover {
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 2px 2px 0 grey;
+  transition: box-shadow 0.2s, font-weight 0.2s;
+}
+
+input[type=submit]:focus {
+  outline: 0;
+}
+
+input[type=submit]:active {
+  font-style: italic;
+  box-shadow: none;
+}
+
+.risk_report {
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.risk_reason {
+  font-size: 20px;
+  color: black;
+}

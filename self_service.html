@@ -2,135 +2,184 @@
 <html>
 <head>
     <title>Self Service</title>
+    <link rel="icon" type="image/png" href="images/UN_Badge.png" />
     <script src="self_service.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
     <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
-    <link rel="stylesheet" href="css/prenatal_care.css">
+    <link rel="stylesheet" href="css/main.css">
+    
+    <script>
+        window.addEventListener("beforeunload", function () {
+          document.body.classList.add("animate-out");
+        });
+    </script>
 </head>
-<style>
-body{
-    text-align:center;
-}
-a{
-  text-decoration: none;
-}
-</style>
 
-<body>
-    <div class="header">
+<body class="animate-in">
+    <header>
         <h1>Self Service</h1>
-    </div>
-
+    </header>
     <form id="form" action="prognosis.php" method="POST">
-        <h2>Personal Information</h2>
-        <label for="first_name">First Name</label>
-        <input type="text" id="first_name" name="first_name" placeholder="Jane" required>
-        <br>
-        <label for="last_name">Last Name</label>
-        <input type="text" id="last_name" name="last_name" placeholder="Doe" required>
-        <br>
-        <label for="age">Age (years)</label>
-        <input type="number" id="age" name="age" min="0" step="1" placeholder="25" required>
-        <br>
-
-        <h2>Pregnancy Related Question</h2>
-        <label for="multiple_pregnancy">Is this a multiple pregnancy?</label>
-        <select id="multiple_pregnancy" name="multiple_pregnancy" onChange="show_hide_baby_no_question()" required>
-            <option value="No">No</option>
-            <option value="Yes">Yes</option>
-            <option value="Idk">I don't know</option>
-        </select>
-        <br>
-        <div id="baby_no_question" style="display:none">
-            <label for="baby_no">How many babies are you carrying?</label>
-            <input type="number" id="baby_no" name="baby_no" min="2" step="1" placeholder="2">
-            <br>
+        <div class="sections">
+            <input type="button" class="accordion" value="Personal Information">
+            <div class="panel">
+                <label for="first_name">First Name</label><br>
+                <input type="text" id="first_name" name="first_name" placeholder="Jane" required>
+                <br>
+                <label for="last_name">Last Name</label><br>
+                <input type="text" id="last_name" name="last_name" placeholder="Doe" required>
+                <br>
+                <label for="age">Age (years)</label><br>
+                <input type="number" id="age" name="age" min="0" step="1" placeholder="25" required>
+                <br><br>
+            </div>
         </div>
-        <label for="pregnancy_duration">How far along are you? (weeks)</label>
-        <input type="number" id="pregnancy_duration" name="pregnancy_duration" min="0" step="1" placeholder="4" required>
-        <br>
-        <label for="miscarriage">Have you experienced any miscarriage(s) or stillbirth(s)?</label>
-        <select id="miscarriage" name="miscarriage" onChange="show_hide_miscarriage_no_question()" required>
-            <option value="No">No</option>
-            <option value="Yes">Yes</option>
-        </select>
-        <br>
-        <div id="miscarriage_no_question" style="display:none">
-            <label for="miscarriage_no">How many miscarriage(s) and/or stillbirth(s) have you experienced?</label>
-            <input type="number" id="miscarriage_no" name="miscarriage_no" min="1" step="1" placeholder="1">
-            <br>
-        </div>
-
-        <h2>Other Health Related Question</h2>
-        <label for="tobacco_use">Do you smoke?</label>
-        <select id="tobacco_use" name="tobacco_use" onChange="show_hide_tobacco_no_question()" required>
-            <option value="No">No</option>
-            <option value="Yes">Yes</option>
-        </select>
-        <br>
-        <div id="tobacco_no_question" style="display:none">
-            <label for="tobacco_no">How many packs do you smoke per week?</label>
-            <input type="tobacco_no" id="tobacco_no" name="tobacco_no" min="0.5" step="0.1" placeholder="0.5">
-            <br>
+        <div class="sections">
+            <input type="button" class="accordion" value="Pregnancy Related Question">
+            <div class="panel">
+                <label for="multiple_pregnancy">Is this a multiple pregnancy?</label><br>
+                <select id="multiple_pregnancy" name="multiple_pregnancy" onChange="show_hide_baby_no_question()">
+                    <option value="No">No</option>
+                    <option value="Yes">Yes</option>
+                    <option value="Idk">I don't know</option>
+                </select>
+                <br>
+                <div id="baby_no_question" style="display:none">
+                    <label for="baby_no">How many babies are you carrying?</label><br>
+                    <input type="number" id="baby_no" name="baby_no" min="2" step="1" placeholder="2">
+                    <br>
+                </div>
+                <label for="pregnancy_duration">How far along are you? (weeks)</label><br>
+                <input type="number" id="pregnancy_duration" name="pregnancy_duration" min="0" step="1" placeholder="4">
+                <br>
+                <label for="miscarriage">Have you experienced any miscarriage(s) or stillbirth(s)?</label><br>
+                <select id="miscarriage" name="miscarriage" onChange="show_hide_miscarriage_no_question()">
+                    <option value="No">No</option>
+                    <option value="Yes">Yes</option>
+                </select>
+                <br>
+                <div id="miscarriage_no_question" style="display:none">
+                    <label for="miscarriage_no">How many miscarriage(s) and/or stillbirth(s) have you experienced?</label><br>
+                    <input type="number" id="miscarriage_no" name="miscarriage_no" min="1" step="1" placeholder="1">
+                </div>
+                <br>
+            </div>
         </div>
 
-        <label for="alcohol_use">Do you drink alcohol?</label>
-        <select id="alcohol_use" name="alcohol_use" onChange="show_hide_alcohol_no_question()" required>
-            <option value="No">No</option>
-            <option value="Yes">Yes</option>
-        </select>
-        <div id="alcohol_no_question" style="display:none">
-            <label for="alcohol_no">How many standard drinks do you have per week?</label>
-            <input type="alcohol_no" id="alcohol_no" name="alcohol_no" min="0" step="1" placeholder="1">
-            <br>
+        <div class="sections">
+            <input type="button" class="accordion" value="Other Health Related Questions">
+            <div class="panel">
+                <label for="tobacco_use">Do you smoke?</label><br>
+                <select id="tobacco_use" name="tobacco_use" onChange="show_hide_tobacco_no_question()">
+                    <option value="No">No</option>
+                    <option value="Yes">Yes</option>
+                </select>
+                <br>
+                <div id="tobacco_no_question" style="display:none">
+                    <label for="tobacco_no">How many packs do you smoke per week?</label><br>
+                    <input type="number" id="tobacco_no" name="tobacco_no" min="0.5" step="0.1" placeholder="0.5">
+                    <br>
+                </div>
+
+                <label for="alcohol_use">Do you drink alcohol?</label><br>
+                <select id="alcohol_use" name="alcohol_use" onChange="show_hide_alcohol_no_question()">
+                    <option value="No">No</option>
+                    <option value="Yes">Yes</option>
+                </select>
+                <br>
+                <div id="alcohol_no_question" style="display:none">
+                    <label for="alcohol_no">How many standard drinks do you have per week?</label><br>
+                    <input type="number" id="alcohol_no" name="alcohol_no" min="0" step="1" placeholder="1">
+                </div>
+                <br>
+            </div>
         </div>
 
-        <h2>Health Measurements</h2>
-        <label for="height">Height (cm)</label>
-        <input type="number" id="height" name="height" min="0" step="0.01" placeholder="165" required>
-        <br>
-        <label for="prepregnancy_weight">Pre-pregnancy Weight (kg)</label>
-        <input type="number" id="prepregnancy_weight" name="prepregnancy_weight" min="0" step="0.1" placeholder="50" required>
-        <a data-fancybox data-src="#modal" href="javascript:;">help</a>
-        <div style="display: none;" id="modal">
-            <p>Please provide a guesstimate if unsure.</p>
+        <div class="sections">
+            <input type="button" class="accordion" value="Health Measurements">
+            <div class="panel">
+                <label for="height">Height (cm)</label><br>
+                <input type="number" id="height" name="height" min="0" step="0.01" placeholder="165">
+                <br>
+                <label for="prepregnancy_weight">Pre-pregnancy Weight (kg)</label>
+                <a data-fancybox data-src="#weight_guide" href="javascript:;">help</a>
+                <div style="display: none;" id="weight_guide">
+                    <p>Please provide a guesstimate if unsure.</p>
+                </div><br>
+                <input type="number" id="prepregnancy_weight" name="prepregnancy_weight" min="0" step="0.1" placeholder="50">
+                <br>
+                <label for="current_weight">Current Weight (kg)</label><br>
+                <input type="number" id="current_weight" name="current_weight" min="0" step="0.1" placeholder="50">
+                <br>
+                <label for="blood_pressure">Blood Pressure (mmHg)</label>
+                <a data-fancybox="images" data-options='{"baseClass" : "fancybox-custom"}' href="images/Bloodpressure1.png">help</a>
+                <a href="images/Bloodpressure2.png" data-fancybox="images" data-options='{"baseClass" : "fancybox-custom"}'></a>
+                <a href="images/Bloodpressure3.png" data-fancybox="images" data-options='{"baseClass" : "fancybox-custom"}'></a>
+                <a href="images/Bloodpressure4.png" data-fancybox="images" data-options='{"baseClass" : "fancybox-custom"}'></a>
+                <a href="images/Bloodpressure5.png" data-fancybox="images" data-options='{"baseClass" : "fancybox-custom"}'></a>
+                <br>
+                <input type="text" id="blood_pressure" name="blood_pressure" pattern="\d{2,3}[/]{1}\d{2,3}" placeholder="130/80">
+                <br>
+                <label for="blood_sugar">Blood Sugar Level (mmol/L)</label>
+                <a data-fancybox data-src="#bs_guide" href="javascript:;">help</a>
+                <div style="display: none;" id="bs_guide">
+                    <p>Help guide coming soon!</p>
+                </div><br>
+                <input type="number" id="blood_sugar" name="blood_sugar" min="0" step="0.1" placeholder="5.0">
+                <br>
+                <label for="fasting">Did you fast before completing the blood sugar test above?</label><br>
+                <select id="fasting" name="fasting" required>
+                    <option value="No">No</option>
+                    <option value="Yes">Yes</option>
+                </select>
+                <br>
+                <label for="haemoglobin_level">Haemoglobin Level (mg/dL)</label>
+                <a data-fancybox data-src="#hb_guide" href="javascript:;">help</a>
+                <div style="display: none;" id="hb_guide">
+                    <p>Help guide coming soon!</p>
+                </div><br>
+                <input type="number" id="haemoglobin_level" name="haemoglobin_level" min="0" step="0.1" placeholder="120.0">
+                <br><br>
+            </div>
         </div>
-        <br>
-        <label for="current_weight">Current Weight (kg)</label>
-        <input type="number" id="current_weight" name="current_weight" min="0" step="0.1" placeholder="50" required>
-        <br>
-        <label for="blood_pressure">Blood Pressure (mmHg)</label>
-        <input type="text" id="blood_pressure" name="blood_pressure" pattern="\d{2,3}[/]{1}\d{2,3}" placeholder="130/80" required>
-        <a data-fancybox="images" data-options='{"baseClass" : "fancybox-custom"}' href="images/Bloodpressure1.png">help</a>
-        <a href="images/Bloodpressure2.png" data-fancybox="images" data-options='{"baseClass" : "fancybox-custom"}'></a>
-        <a href="images/Bloodpressure3.png" data-fancybox="images" data-options='{"baseClass" : "fancybox-custom"}'></a>
-        <a href="images/Bloodpressure4.png" data-fancybox="images" data-options='{"baseClass" : "fancybox-custom"}'></a>
-        <a href="images/Bloodpressure5.png" data-fancybox="images" data-options='{"baseClass" : "fancybox-custom"}'></a>
-        <br>
-        <label for="blood_sugar">Blood Sugar Level (mmol/L)</label>
-        <input type="number" id="blood_sugar" name="blood_sugar" min="0" step="0.1" placeholder="5.0" required>
-        <span id="help">help</span>
-        <br>
-        <label for="fasting">Did you fast before completing the blood sugar test above?</label>
-        <select id="fasting" name="fasting" required>
-            <option value="No">No</option>
-            <option value="Yes">Yes</option>
-        </select>
-        <br>
-        <label for="haemoglobin_level">Haemoglobin Level (mg/dL)</label>
-        <input type="number" id="haemoglobin_level" name="haemoglobin_level" min="0" step="0.1" placeholder="120.0" required>
-        <span id="help">help</span>
-        <br>
 
-        <br>
-        <input type="submit" value="Submit" id="Submit">
-        <a href="prenatal_care.html">
-          <input type="button" value="Back" id="Back">
-        </a>
+    <script>
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+        
+        for (i = 0; i < acc.length; i++) {
+          acc[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.maxHeight) {
+              panel.style.maxHeight = null;
+            } else {
+              panel.style.maxHeight = panel.scrollHeight+150 + "px";
+            } 
+          });
+        }
+    </script>
+    
+    <input type="submit" value="Submit" id="Submit">
 
-        <input type="button" value="Home" id="Home">
     </form>
+
+    <div class="content_selections">
+        <div class="containers">
+            <a href="prenatal_care.html">
+                <img src="images/Undue_Back_Icon.svg"  alt="Home Icon" width="100", height="100">
+                <p>Back</p>
+            </a>
+        </div>
+
+        <div class="containers">
+            <a href="landing_page.html">
+                <img src="images/House_1.svg"  alt="Back Icon" width="100", height="100">
+                <p>Home</p>
+            </a>
+        </div>
+    </div>
 
 </body>
 </html>
