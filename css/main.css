@@ -270,3 +270,9 @@ section {
   max-width: 30%;
   display: inline-block;
 }
+
+.description {
+  padding: 1rem;
+  font-size: 17px;
+  color: black;
+}
