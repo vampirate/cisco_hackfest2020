@@ -19,7 +19,7 @@ h2 {
 
 h3 {
   font-size: 22px;
-  color: black
+  color: black;
 }
 
 body {
@@ -252,7 +252,7 @@ input[type=submit]:active {
 }
 
 .risk_reason {
-  font-size: 20px;
+  font-size: 18px;
   color: black;
 }
 

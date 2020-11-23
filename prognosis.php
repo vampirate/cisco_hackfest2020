@@ -22,6 +22,8 @@
     $age = $_POST['age'];
     $pregnancy_duration = $_POST['pregnancy_duration'];
     $miscarriage = $_POST['miscarriage'];
+    $tobacco_use = $_POST['tobacco_use'];
+    $alcohol_use = $_POST['alcohol_use'];
     $height = $_POST['height']/100;
     $prepregnancy_weight = $_POST['prepregnancy_weight'];
     $current_weight = $_POST['current_weight'];
@@ -38,16 +40,33 @@
         $age_risk = false;
     }
     
-    if ($miscarriage = "Yes") {
-        if ($_POST['miscarriage_no'] >= 2) {
+    if ($miscarriage == "Yes") {
+        $miscarriage_risk = true;
+        if ($_POST['miscarriage_no'] == 1) {
             $risk += 1;
-            $miscarriage_risk = true;
+        } elseif ($_POST['miscarriage_no'] < 3 ) {
+            $risk += 2;
         } else {
-            $miscarriage_risk = false;
+            $risk += 3;
         }
     } else {
         $miscarriage_risk = false;
     }
+
+    if ($tobacco_use == "Yes") {
+        $risk += 1;
+        $tobacco_risk = true;
+    } else {
+        $tobacco_risk = false;
+    }
+
+    if ($alcohol_use == "Yes") {
+        $risk += 2;
+        $alcohol_risk = true;
+    } else {
+        $alcohol_risk = false;
+    }
+
 
     // IMPORTANT: only calculating weight gain risk for mums in normal BMI range at the moment
     //https://www.health.qld.gov.au/news-events/news/how-much-weight-should-i-gain-while-pregnant-
@@ -86,7 +105,7 @@
     $diastolic_pressure = $blood_pressure[1];
     //Source: https://www.health.gov.au/resources/pregnancy-care-guidelines/part-d-clinical-assessments/blood-pressure
     if ($systolic_pressure >= 140 and $diastolic_pressure >= 90) {
-        $risk += 1;
+        $risk += 2;
         $bp_risk = true;
     } else {
         $bp_risk = false;
@@ -109,6 +128,7 @@
         }
     }
 
+
     //https://www.pregnancybirthbaby.org.au/diabetes-during-pregnancy
     if ($fasting == "Yes") {
         if ($blood_sugar > 5.5){
@@ -116,7 +136,7 @@
             $bs_risk = true;
         } else {
             $bs_risk = false;
-        }
+        }   
     } else {
         if ($blood_sugar > 7.0){
             $risk += 1;
@@ -126,48 +146,58 @@
         }
     }
 
-    if ($risk > 0) {
-        $risk_profile = "HIGH";
-        $color = "#ef4023";
-    } else {
+    if ($risk <= 1) {
         $risk_profile = "LOW";
-        $color = "#1dbd45";
+    } elseif ($risk > 1 and $risk < 5){
+        $risk_profile = "MODERATE";
+    } else {
+        $risk_profile = "HIGH";
     }
     ?>
 
     <?php echo "<h2>Thanks " . $first_name . " " . $last_name ." for using the Self Service page</h2>"?>
 
     <?php echo "<h3>Your pregnancy's current risk profile is </h3>"; ?>
-    <?php echo "<div class=\"risk_report\" style=\"color: $color\">$risk_profile</h4>"; ?>
+    <?php echo "<div class=\"risk_report\">$risk_profile</h4>"; ?>
 
     <?php
 
-        if ($risk>0) {
-            echo "<h3>The reason is because:</h3>";
-        }
-        if ($age_risk) {
-            echo "<li class=\"risk_reason\">You are older than 35 years old which are more prone to complications during pregnancy.</li>";
-        }
-        if ($miscarriage_risk) {
-            echo "<li class=\"risk_reason\">You have experienced multiple miscarriages/stillbirths. This means you have a higher chance of miscarrying again.</li>";
-        }
-        if ($weight_risk) {
-            if ($weight_risk_detail == "over") {
-                echo "<li class=\"risk_reason\">Your weight gain is higher than the normal range.</li>";
-            } else {
-                echo "<li class=\"risk_reason\">Your weight gain is lower than the normal range.</li>";
+        if ($risk>1) {
+            echo "<br><h3>This is because of your:</h3>";
+            if ($age_risk) {
+                echo "<li class=\"risk_reason\">Age group</li>";
             }
-        }
-        if ($bp_risk) {
-            echo "<li class=\"risk_reason\">Your blood pressure is higher than what is considered normal.</li>";
-        }
-        if ($hb_risk) {
-            echo "<li class=\"risk_reason\">Your haemoblogin level indicates that you are anemic.</li>";
-        }
-        if ($bs_risk) {
-            echo "<li class=\"risk_reason\">Your blood sugar level is higher than what is considered normal during a pregnancy.</li>";
-        }
+            if ($miscarriage_risk) {
+                echo "<li class=\"risk_reason\">Past experience in miscarriage(s)</li>";
+            }
+            if ($tobacco_risk and $alcohol_risk) {
+                echo "<li class=\"risk_reason\">Tobacco and alcohol use during pregnancy</li>";
+            } elseif ($alcohol_risk) {
+                echo "<li class=\"risk_reason\">Alcohol use during pregnancy</li>";
+            } elseif ($tobacco_risk) {
+                echo "<li class=\"risk_reason\">Tobacco use during pregnancy</li>";
+            }
+            if ($weight_risk) {
+                if ($weight_risk_detail == "over") {
+                    echo "<li class=\"risk_reason\">Weight gain during pregnancy is higher than expected.</li>";
+                } else {
+                    echo "<li class=\"risk_reason\">Weight gain during pregnancy is lower than expected.</li>";
+                }
+            }
+            if ($bp_risk) {
+                echo "<li class=\"risk_reason\">Your blood pressure</li>";
+            }
+            if ($hb_risk) {
+                echo "<li class=\"risk_reason\">Your iron level</li>";
+            }
+            if ($bs_risk) {
+                echo "<li class=\"risk_reason\">Your blood sugar level</li>";
+            }
+        }  
     ?>
+    
+    <br>
+    <h3>If you have any queries or concerns, please seek advice of a qualified healthcare professional.</h3>
 
     <div class="content_selections">
         <div class="containers">
