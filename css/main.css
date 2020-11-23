@@ -256,6 +256,17 @@ input[type=submit]:active {
   color: black;
 }
 
-.logos{
+.logos {
   padding-top: 50px;
+}
+
+section {
+  width: 70%;
+  display: inline-block;
+}
+
+.image {
+  width: 100%;
+  max-width: 30%;
+  display: inline-block;
 }
