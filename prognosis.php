@@ -171,24 +171,24 @@
                 echo "<li class=\"risk_reason\">Past experience in miscarriage(s)</li>";
             }
             if ($tobacco_risk and $alcohol_risk) {
-                echo "<li class=\"risk_reason\">Tobacco and alcohol use during pregnancy</li>";
+                echo "<li class=\"risk_reason\">Tobacco (smoking) and alcohol use during pregnancy</li>";
             } elseif ($alcohol_risk) {
                 echo "<li class=\"risk_reason\">Alcohol use during pregnancy</li>";
             } elseif ($tobacco_risk) {
-                echo "<li class=\"risk_reason\">Tobacco use during pregnancy</li>";
+                echo "<li class=\"risk_reason\">Tobacco (smoking) use during pregnancy</li>";
             }
             if ($weight_risk) {
                 if ($weight_risk_detail == "over") {
-                    echo "<li class=\"risk_reason\">Weight gain during pregnancy is higher than expected.</li>";
+                    echo "<li class=\"risk_reason\">Current weight is above target weight.</li>";
                 } else {
-                    echo "<li class=\"risk_reason\">Weight gain during pregnancy is lower than expected.</li>";
+                    echo "<li class=\"risk_reason\">Current weigth is below target weight.</li>";
                 }
             }
             if ($bp_risk) {
                 echo "<li class=\"risk_reason\">Your blood pressure</li>";
             }
             if ($hb_risk) {
-                echo "<li class=\"risk_reason\">Your iron level</li>";
+                echo "<li class=\"risk_reason\">Your haemoglobin level (how much blood you are carrying)</li>";
             }
             if ($bs_risk) {
                 echo "<li class=\"risk_reason\">Your blood sugar level</li>";
