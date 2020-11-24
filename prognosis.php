@@ -181,7 +181,7 @@
                 if ($weight_risk_detail == "over") {
                     echo "<li class=\"risk_reason\">Current weight is above target weight.</li>";
                 } else {
-                    echo "<li class=\"risk_reason\">Current weigth is below target weight.</li>";
+                    echo "<li class=\"risk_reason\">Current weight is below target weight.</li>";
                 }
             }
             if ($bp_risk) {
